@@ -484,7 +484,7 @@ h3 {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   background: var(--color-bg-alt);
   display: flex;
   align-items: center;
@@ -877,7 +877,29 @@ h3 {
 }
 
 /* --- Army Life Timeline --- */
+.army-life__body {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+  margin-top: var(--space-lg);
+}
+
+.army-life__img-col {
+  flex: 0 0 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: sticky;
+  top: calc(80px + var(--space-md));
+}
+
+.army-life__img-col img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .army-life__timeline {
+  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1483,6 +1505,17 @@ h3 {
 
   .army-life__timeline::before {
     right: 15px;
+  }
+
+  .army-life__body {
+    flex-direction: column;
+  }
+
+  .army-life__img-col {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    position: static;
   }
 }
 
