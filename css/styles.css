@@ -3233,3 +3233,105 @@ h2::after {
     overflow-x: hidden;
   }
 }
+
+/* Alternate one shared navy and one shared paper surface from top to bottom. */
+:root {
+  --section-navy: var(--color-navy);
+  --section-light: var(--color-bg);
+}
+
+.hero {
+  background:
+    linear-gradient(110deg, rgba(74, 95, 71, 0.18), transparent 42%),
+    radial-gradient(circle at 7% 37%, rgba(196, 175, 120, 0.16), transparent 18rem),
+    radial-gradient(circle at 90% 5%, rgba(18, 199, 238, 0.12), transparent 24rem),
+    var(--section-navy);
+}
+
+#journey,
+#service-types,
+#how-it-works,
+#why,
+#thirty-days,
+#army-life,
+#pricing,
+#contact {
+  color: var(--color-text);
+  background: var(--section-light);
+}
+
+#who-fits,
+#benefits,
+#about,
+#differentiation,
+#ninety-days,
+#testimonials,
+#faq {
+  color: var(--color-cream);
+  background: var(--section-navy);
+}
+
+#journey::before,
+#service-types::before,
+#how-it-works::before,
+#why::before,
+#thirty-days::before,
+#army-life::before,
+#pricing::before,
+#contact::before {
+  background-image: radial-gradient(rgba(16, 41, 69, 0.12) 1px, transparent 1px);
+}
+
+#who-fits::before,
+#benefits::before,
+#about::before,
+#differentiation::before,
+#ninety-days::before,
+#testimonials::before,
+#faq::before {
+  background-image: radial-gradient(rgba(248, 241, 229, 0.2) 1px, transparent 1px);
+}
+
+#journey h2,
+#journey .section-subtitle,
+#how-it-works h2,
+#how-it-works .section-subtitle,
+#contact h2,
+#contact .contact__intro,
+#contact .form__label {
+  color: var(--color-text);
+}
+
+#journey .journey__step {
+  color: var(--color-text);
+  background: rgba(251, 247, 239, 0.92);
+  border-color: var(--paper-line);
+  box-shadow: 0 12px 22px rgba(16, 41, 69, 0.1);
+}
+
+#journey .journey__step-content h3,
+#journey .journey__step-content p,
+#how-it-works .how-works__card h3,
+#how-it-works .how-works__card p {
+  color: var(--color-navy);
+}
+
+#how-it-works .how-works__card {
+  background: var(--color-card-bg);
+  border-color: rgba(16, 41, 69, 0.16);
+  box-shadow: var(--shadow-sm);
+}
+
+#how-it-works .how-works__note {
+  color: var(--color-text-light);
+}
+
+#about h2,
+#faq h2,
+#about .about__text p {
+  color: var(--color-cream);
+}
+
+#about .about__quote {
+  color: var(--color-cream);
+}
