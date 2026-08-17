@@ -3420,6 +3420,12 @@ h2::after {
   max-width: 42rem;
 }
 
+/* These wrappers become layout groups only where the mobile composition needs them. */
+.hero__intro,
+.hero__details {
+  display: contents;
+}
+
 .hero__badge {
   max-width: 100%;
   white-space: normal;
@@ -3584,6 +3590,149 @@ h2::after {
 
   .hero__portrait {
     margin-bottom: 4.7rem;
+  }
+}
+
+/* Preserve the reference's generous split layout on wider phones. */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) clamp(10.5rem, 41vw, 16rem);
+    gap: clamp(0.8rem, 2.8vw, 1.25rem);
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 6.2vw, 2.5rem);
+  }
+
+  .hero__title .hero__title-line {
+    transform: none;
+  }
+
+  .hero__portrait {
+    margin-bottom: clamp(5.5rem, 19vw, 7.25rem);
+  }
+
+  .hero__credentials {
+    width: min(100%, clamp(10rem, 39vw, 14rem));
+  }
+}
+
+/* Narrow phones need a composed hero, not a compressed desktop grid. */
+@media (max-width: 479px) {
+  .hero {
+    padding-block: 5.8rem 4.25rem;
+  }
+
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    grid-template-rows: auto;
+    column-gap: clamp(0.45rem, 2.2vw, 0.7rem);
+    align-items: start;
+  }
+
+  .hero__content {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    max-width: none;
+    flex-direction: column;
+  }
+
+  .hero__intro {
+    display: block;
+    min-width: 0;
+  }
+
+  .hero__details {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: clamp(0.75rem, 3vw, 1rem);
+  }
+
+  .hero__badge {
+    margin: 0 0 clamp(0.55rem, 2.4vw, 0.8rem);
+  }
+
+  .hero__title {
+    margin: 0;
+    font-size: clamp(2.2rem, 9.5vw, 2.65rem);
+    letter-spacing: -0.025em;
+  }
+
+  .hero__title .hero__title-line,
+  .hero__title .hero__title-line:last-child {
+    font-size: 0.58em;
+    transform: none;
+  }
+
+  .hero__subtitle {
+    margin: 0;
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
+    line-height: 1.62;
+  }
+
+  .hero__actions {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero__primary-link {
+    min-height: 3.55rem;
+    padding-inline: 0.6rem;
+    font-size: clamp(0.76rem, 3.35vw, 0.9rem);
+  }
+
+  .hero__primary-arrow {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.5rem;
+  }
+
+  .hero__secondary-link {
+    font-size: clamp(0.68rem, 2.8vw, 0.78rem);
+  }
+
+  .hero__portrait {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    max-width: none;
+    margin: 0 0 clamp(5.4rem, 24vw, 6.6rem);
+    align-self: start;
+    justify-self: stretch;
+  }
+
+  .hero__credentials {
+    right: 0;
+    top: calc(100% + clamp(0.8rem, 3vw, 1rem));
+    width: 100%;
+  }
+
+  .hero__credential {
+    padding: 0.4rem 0.25rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 2.2rem);
+  }
+
+  .hero__title .hero__title-line,
+  .hero__title .hero__title-line:last-child {
+    font-size: 0.54em;
+  }
+
+  .hero__portrait {
+    width: auto;
+    justify-self: stretch;
   }
 }
 
