@@ -3406,12 +3406,12 @@ h2::after {
 
 /* Keep the hero as one responsive composition instead of inheriting legacy breakpoints. */
 .hero {
-  padding-block: clamp(6.75rem, 10vw, 10.5rem) clamp(6.5rem, 8vw, 9.5rem);
+  padding-block: clamp(6.75rem, 10vw, 10.5rem) clamp(7.75rem, 9vw, 10.75rem);
 }
 
 .hero__inner {
   grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
-  gap: clamp(2rem, 5vw, 5.5rem);
+  gap: clamp(2.75rem, 6vw, 6.5rem);
   align-items: center;
 }
 
@@ -3433,6 +3433,13 @@ h2::after {
 .hero__subtitle,
 .hero__actions {
   max-width: min(100%, 30rem);
+}
+
+/* Match both headline lines to the smaller, reference-aligned scale. */
+.hero__title .hero__title-line {
+  font-size: 0.74em;
+  transform: scaleX(clamp(0.66, calc(100cqw / 850), 0.76));
+  transform-origin: right center;
 }
 
 .hero__portrait {
@@ -3458,12 +3465,12 @@ h2::after {
 
 @media (max-width: 1024px) {
   .hero {
-    padding-block: clamp(6rem, 11vw, 7.5rem) clamp(3rem, 7vw, 5rem);
+    padding-block: clamp(6rem, 11vw, 7.5rem) clamp(4.25rem, 8vw, 6rem);
   }
 
   .hero__inner {
     grid-template-columns: minmax(0, 1fr) clamp(7.6rem, 30vw, 15rem);
-    gap: clamp(0.75rem, 2.25vw, 1.5rem);
+    gap: clamp(1rem, 3vw, 2rem);
     align-items: start;
   }
 
@@ -3493,12 +3500,12 @@ h2::after {
 
 @media (max-width: 767px) {
   .hero {
-    padding-block: 6rem 2.5rem;
+    padding-block: 6rem 3.75rem;
   }
 
   .hero__inner {
     grid-template-columns: minmax(0, 1fr) clamp(7rem, 35vw, 9.75rem);
-    gap: clamp(0.45rem, 2vw, 0.75rem);
+    gap: clamp(0.65rem, 2.4vw, 0.9rem);
   }
 
   .hero__badge {
@@ -3521,9 +3528,15 @@ h2::after {
     letter-spacing: -0.09em;
   }
 
-  .hero__title-brand,
+  .hero__title-brand {
+    min-width: 0;
+  }
+
   .hero__title .hero__title-line {
     min-width: 0;
+    font-size: 0.78em;
+    transform: scaleX(0.78);
+    transform-origin: right center;
   }
 
   .hero__title .hero__title-line:last-child {
@@ -3572,4 +3585,9 @@ h2::after {
   .hero__portrait {
     margin-bottom: 4.7rem;
   }
+}
+
+/* Reserve visible navy space before the paper journey panel. */
+#journey {
+  margin-top: 0;
 }
