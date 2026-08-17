@@ -3182,3 +3182,54 @@ h2::after {
 #journey .journey__step-content p {
   color: var(--color-cream);
 }
+
+/* Keep the FAQ heading aligned with the accordion's RTL content column. */
+#faq h2 {
+  max-width: var(--max-w-narrow);
+  margin-inline: auto;
+  direction: rtl;
+  text-align: right;
+}
+
+#faq h2::after {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
+}
+
+/* Give both the question controls and answers equal breathing room inside the card. */
+#faq .faq__question,
+#faq .faq__answer-inner {
+  padding-inline: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+#faq .faq__question {
+  direction: rtl;
+}
+
+#faq .faq__question > span {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+#faq .faq__answer-inner {
+  text-align: right;
+}
+
+#faq .faq__list {
+  gap: clamp(0.55rem, 1.5vw, 0.9rem);
+}
+
+@media (max-width: 767px) {
+  /* Expanded answers must not increase the intrinsic width of the flex list. */
+  #faq .faq__list,
+  #faq .faq__item,
+  #faq .faq__answer,
+  #faq .faq__answer-inner {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #faq .faq__list {
+    overflow-x: hidden;
+  }
+}
