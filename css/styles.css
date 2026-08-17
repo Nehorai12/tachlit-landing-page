@@ -3403,3 +3403,173 @@ h2::after {
 #about .about__quote {
   color: var(--color-cream);
 }
+
+/* Keep the hero as one responsive composition instead of inheriting legacy breakpoints. */
+.hero {
+  padding-block: clamp(6.75rem, 10vw, 10.5rem) clamp(6.5rem, 8vw, 9.5rem);
+}
+
+.hero__inner {
+  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: center;
+}
+
+.hero__content {
+  min-width: 0;
+  max-width: 42rem;
+}
+
+.hero__badge {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.hero__title {
+  max-width: 100%;
+  font-size: clamp(3.1rem, 6vw, 6.5rem);
+}
+
+.hero__subtitle,
+.hero__actions {
+  max-width: min(100%, 30rem);
+}
+
+.hero__portrait {
+  justify-self: stretch;
+  width: min(100%, 31rem);
+  margin-inline-start: auto;
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(15.5rem, 0.68fr);
+    gap: clamp(1.5rem, 3.5vw, 2.75rem);
+  }
+
+  .hero__title {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding-block: clamp(6rem, 11vw, 7.5rem) clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) clamp(7.6rem, 30vw, 15rem);
+    gap: clamp(0.75rem, 2.25vw, 1.5rem);
+    align-items: start;
+  }
+
+  .hero__content {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: none;
+  }
+
+  .hero__portrait {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 5.25vw, 3.7rem);
+  }
+
+  .hero__title .hero__title-line:last-child {
+    font-size: 0.76em;
+    transform: scaleX(clamp(0.7, calc(100cqw / 760), 0.8));
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-block: 6rem 2.5rem;
+  }
+
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) clamp(7rem, 35vw, 9.75rem);
+    gap: clamp(0.45rem, 2vw, 0.75rem);
+  }
+
+  .hero__badge {
+    gap: 0.35rem;
+    margin-bottom: clamp(0.7rem, 2vw, 1rem);
+    padding: 0.4rem 0.65rem;
+    font-size: clamp(0.57rem, 2vw, 0.72rem);
+    line-height: 1.25;
+  }
+
+  .hero__badge-icon {
+    width: 1.35em;
+    height: 1.35em;
+  }
+
+  .hero__title {
+    margin-bottom: clamp(0.9rem, 3vw, 1.25rem);
+    font-size: clamp(1.45rem, 7.2vw, 2.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.09em;
+  }
+
+  .hero__title-brand,
+  .hero__title .hero__title-line {
+    min-width: 0;
+  }
+
+  .hero__title .hero__title-line:last-child {
+    font-size: 0.78em;
+    transform: scaleX(0.78);
+  }
+
+  .hero__subtitle {
+    margin-bottom: clamp(1.25rem, 4vw, 1.65rem);
+    font-size: clamp(0.72rem, 2.35vw, 0.9rem);
+    line-height: 1.62;
+  }
+
+  .hero__primary-link {
+    min-height: clamp(3.65rem, 12vw, 4.1rem);
+    font-size: clamp(0.88rem, 2.8vw, 1.05rem);
+  }
+
+  .hero__secondary-link {
+    font-size: clamp(0.7rem, 2.2vw, 0.82rem);
+  }
+
+  .hero__portrait {
+    margin-bottom: clamp(4.9rem, 25vw, 6.5rem);
+  }
+
+  .hero__credentials {
+    top: calc(100% + clamp(0.9rem, 3vw, 1.35rem));
+    width: min(100%, clamp(7rem, 38vw, 9.5rem));
+  }
+}
+
+@media (max-width: 359px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr) 6.7rem;
+  }
+
+  .hero__title {
+    font-size: 1.4rem;
+  }
+
+  .hero__badge {
+    font-size: 0.54rem;
+  }
+
+  .hero__portrait {
+    margin-bottom: 4.7rem;
+  }
+}
