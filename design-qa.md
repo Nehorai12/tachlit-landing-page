@@ -2,7 +2,7 @@
 
 Source visual truth: `C:\Users\Daniel\Desktop\76d018a4-c63b-4523-9e25-0964c7d43c69.jpeg`.
 
-Implementation evidence: `C:\Users\Daniel\.codex\visualizations\2026\08\15\01a00705-bcab-7841-8ad4-67f2449c7f3c\hero-mobile-text-fit.png` and `C:\Users\Daniel\.codex\visualizations\2026\08\15\01a00705-bcab-7841-8ad4-67f2449c7f3c\hero-visual-comparison.png`.
+Implementation evidence: `C:\Users\Daniel\.codex\visualizations\2026\08\15\01a00705-bcab-7841-8ad4-67f2449c7f3c\hero-mobile-final-check-2.png` and `C:\Users\Daniel\.codex\visualizations\2026\08\15\01a00705-bcab-7841-8ad4-67f2449c7f3c\hero-desktop-final-check-2.png`; the earlier reference comparison remains at `C:\Users\Daniel\.codex\visualizations\2026\08\15\01a00705-bcab-7841-8ad4-67f2449c7f3c\hero-visual-comparison.png`.
 
 Viewport and state: top of the landing page at a 390 x 844 browser viewport. The page content viewport measured 375 x 844 because of the vertical scrollbar. The reference source is 941 x 1674 pixels and was rendered at 390 pixels wide for the comparison; the implementation capture is 390 x 844 CSS pixels at device scale factor 1.
 
@@ -31,5 +31,17 @@ No actionable P0, P1, or P2 issues remain for the reported headline/portrait ove
 ### Follow-up polish
 
 P3: the reference uses a more condensed display face than the available Heebo font. A licensed or explicitly chosen Hebrew display font could make the headline even closer without changing the responsive layout.
+
+### Follow-up responsive pass
+
+The desktop capture at 1440px shows the third headline line ending before the portrait, with a visible navy gap. The line uses a responsive desktop scale tied to the content container rather than the viewport.
+
+The portrait frame uses one 2:3 ratio across desktop and mobile, and the image keeps `object-fit: cover` so the source is never stretched. The credential cards use `clamp()` sizing and the requested person/group line icons; the badge uses the same two-person icon treatment.
+
+At 390px the portrait and card group stay inside the left track. At 320px the hero switches to a single-column flow, putting the portrait below the copy and preventing any possible collision.
+
+At the 768px breakpoint the card text is constrained to each card’s fluid width instead of retaining the old fixed 116px paragraph width.
+
+The “המסע האישי” section now shares the navy background and cream dot-grid pattern used by the other guidance sections.
 
 final result: passed

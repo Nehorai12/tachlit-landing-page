@@ -3060,3 +3060,125 @@ h2::after {
     margin-top: 1rem;
   }
 }
+
+/* Final responsive hero rules win over the earlier legacy breakpoints. */
+.hero__badge::before {
+  content: none;
+}
+
+.hero__badge-icon {
+  width: 1.55em;
+  height: 1.55em;
+  flex: 0 0 auto;
+}
+
+.hero__credential-icon {
+  display: block;
+  width: clamp(1.35rem, 3vw, 2.2rem);
+  height: clamp(1.35rem, 3vw, 2.2rem);
+  flex: 0 0 auto;
+}
+
+.hero__credential {
+  width: clamp(5rem, 9vw, 8.1rem);
+  min-height: 0;
+  aspect-ratio: 0.78;
+}
+
+.hero__credential p {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(0.62rem, 1.05vw, 0.84rem);
+}
+
+.hero__portrait {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  min-width: 0;
+  align-self: start;
+  aspect-ratio: 2 / 3;
+}
+
+.hero__portrait img {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .hero__content {
+    container-type: inline-size;
+  }
+
+  .hero__title .hero__title-line:last-child {
+    font-size: 0.74em;
+    transform: scaleX(clamp(0.66, calc(100cqw / 850), 0.76));
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__portrait {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    min-width: 0;
+    align-self: start;
+    aspect-ratio: 2 / 3;
+  }
+
+  .hero__portrait img {
+    aspect-ratio: 2 / 3;
+  }
+
+  .hero__credential {
+    width: clamp(4.4rem, 20vw, 6.3rem);
+    aspect-ratio: 0.78;
+  }
+
+  .hero__credential p {
+    font-size: clamp(0.52rem, 2.15vw, 0.72rem);
+  }
+}
+
+@media (max-width: 359px) {
+  .hero__portrait {
+    width: min(100%, 11rem);
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 2 / 3;
+  }
+}
+
+/* Match the navy dotted treatment used by the other guidance sections. */
+#journey {
+  color: var(--color-cream);
+  background: var(--color-navy);
+}
+
+#journey::before {
+  background-image: radial-gradient(rgba(248, 241, 229, 0.2) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+#journey h2,
+#journey .section-subtitle {
+  color: var(--color-cream);
+}
+
+#journey .journey__step {
+  color: var(--color-cream);
+  background: rgba(20, 46, 74, 0.9);
+  border-color: rgba(248, 241, 229, 0.16);
+  box-shadow: none;
+}
+
+#journey .journey__step-content h3,
+#journey .journey__step-content p {
+  color: var(--color-cream);
+}
