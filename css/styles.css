@@ -2660,6 +2660,11 @@ h2::after {
   filter: brightness(0) invert(1);
 }
 
+/* Legal and accessibility pages use the colorful logo without the white filter. */
+.header__logo--colorful img {
+  filter: none;
+}
+
 .hero {
   background:
     linear-gradient(110deg, rgba(74, 95, 71, 0.18), transparent 42%),
