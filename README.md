@@ -7,8 +7,7 @@ Landing page for **Tachlit (תכלית)**
 
 ```
 ├── index.html          # Main landing page (16 sections, fully RTL Hebrew)
-├── privacy.html        # Privacy policy (placeholder)
-├── terms.html          # Terms of service (placeholder)
+├── privacy-terms.html  # Privacy policy and terms of service
 ├── accessibility.html  # Accessibility statement (placeholder)
 ├── css/
 │   └── styles.css      # All styles, mobile-first, CSS custom properties
