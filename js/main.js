@@ -330,6 +330,10 @@
     } else if (typeof window.dataLayer !== 'undefined') {
       window.dataLayer.push({ event: eventName, eventData: eventData || '' });
     }
+    // Mirror the site's named interactions in PostHog for conversion analysis.
+    if (window.posthog && typeof window.posthog.capture === 'function') {
+      window.posthog.capture(eventName, { event_label: eventData || '' });
+    }
     // Console log for development
     if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
       console.log('[Analytics]', eventName, eventData || '');
