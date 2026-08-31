@@ -2884,7 +2884,6 @@ h2::after {
   background: var(--color-navy);
 }
 
-.benefit-card:nth-child(even) .benefit-card__icon,
 .how-works__card:nth-child(even) .how-works__card-icon {
   background: var(--color-olive-dark);
 }
