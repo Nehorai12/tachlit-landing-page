@@ -1,6 +1,6 @@
 # תכלית – דף נחיתה
 
-Landing page for **Tachlit (תכלית)**
+Landing page for the **Tachlit (תכלית)** project.
 
 
 ## Structure
