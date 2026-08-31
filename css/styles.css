@@ -1123,6 +1123,13 @@ h3 {
   text-align: center;
 }
 
+/* Give the contact heading the full centered container width at every viewport size. */
+#contact-title {
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+}
+
 .contact__intro {
   max-width: 560px;
   margin: 0 auto var(--space-xl);
