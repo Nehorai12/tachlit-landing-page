@@ -8,7 +8,6 @@ Landing page for the **Tachlit (תכלית)** project.
 ```
 ├── index.html          # Main landing page (16 sections, fully RTL Hebrew)
 ├── privacy-terms.html  # Privacy policy and terms of service
-├── accessibility.html  # Accessibility statement (placeholder)
 ├── css/
 │   └── styles.css      # All styles, mobile-first, CSS custom properties
 ├── js/
